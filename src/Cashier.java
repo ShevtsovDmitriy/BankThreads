@@ -1,10 +1,11 @@
 import java.util.ArrayDeque;
+import java.util.LinkedList;
 
 public class Cashier extends Thread {
 
-    private ArrayDeque<Client> queue;
+    private  volatile LinkedList<Client> queue ;
 
-    public void setQueue(ArrayDeque<Client> queue) {
+    public void setQueue(LinkedList<Client> queue) {
         this.queue = queue;
     }
 
@@ -50,16 +51,6 @@ public class Cashier extends Thread {
                     }
                 }
             }
-            else {
-                try {
-                    Thread.sleep(100);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-
-
-
        }
 
     }

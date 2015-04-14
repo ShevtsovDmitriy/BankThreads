@@ -1,6 +1,3 @@
-/**
- * Created by ִלטענטי on 12.04.2015.
- */
 public class Client {
 
     public static enum operationType{GET, ADD, CHECK}

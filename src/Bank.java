@@ -1,20 +1,21 @@
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Bank {
 
     private Cashier[] cashiers;
-    private ArrayList<ArrayDeque<Client>> queues;
+    private ArrayList<LinkedList<Client>> queues;
     private ClientFactory clientFactory;
 
     public Bank(int cashiersCount) {
         cashiers = new Cashier[cashiersCount];
-        queues = new ArrayList<ArrayDeque<Client>>();
+        queues = new ArrayList<LinkedList<Client>>();
     }
 
     public void go(){
         for (int i = 0; i < cashiers.length; i++) {
-            queues.add(new ArrayDeque<Client>());
+            queues.add(new LinkedList<Client>());
         }
         for (int i = 0; i < cashiers.length ; i++) {
             cashiers[i]  = new Cashier();
@@ -28,8 +29,6 @@ public class Bank {
         clientFactory.start();
 
         printStatus();
-
-
 
     }
 
